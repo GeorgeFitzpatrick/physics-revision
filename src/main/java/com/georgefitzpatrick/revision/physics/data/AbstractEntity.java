@@ -42,13 +42,14 @@ public abstract class AbstractEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof AbstractEntity other))
+        if (!(obj instanceof AbstractEntity))
             return false;
 
-        if (id != null)
-            return id.equals(other.id);
+        AbstractEntity that = (AbstractEntity) obj;
+        if (this.id != null)
+            return this.id.equals(that.id);
 
-        return super.equals(other);
+        return super.equals(that);
     }
 
 }
