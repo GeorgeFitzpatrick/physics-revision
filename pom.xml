@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- Vaadin project from https://start.vaadin.com/project/89318812-a67b-4569-949d-9c38322c4aa1 -->
     <groupId>com.georgefitzpatrick.revision.physics</groupId>
     <artifactId>physicsrevision</artifactId>
     <name>Project base for Spring Boot and Vaadin Flow</name>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>11</java.version>

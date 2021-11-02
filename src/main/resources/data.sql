@@ -297,8 +297,8 @@ VALUES (1, 'lesson/chapter_1/lesson_3_uncertainty.pdf'),
        (107, 'lesson/chapter_19/lesson_4_analysing_starlight.pdf'),
        (108, 'lesson/chapter_19/lesson_5_luminosity.pdf'),
 
-       (110, 'lesson/chapter_20/lesson_1_the_doppler_effect.pdf'),
-       (109, 'lesson/chapter_20/lesson_2_astronomical_distance.pdf'),
+       (109, 'lesson/chapter_20/lesson_1_astronomical_distance.pdf'),
+       (110, 'lesson/chapter_20/lesson_2_the_doppler_effect.pdf'),
        (111, 'lesson/chapter_20/lesson_3_hubbles_law.pdf'),
        (112, 'lesson/chapter_20/lesson_4_big_bang_theory.pdf'),
 
