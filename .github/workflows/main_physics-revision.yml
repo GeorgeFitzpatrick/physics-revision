@@ -19,7 +19,6 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v2
         with:
-          distribution: 'openjdk'
           java-version: '11'
 
       - name: Build with Maven
