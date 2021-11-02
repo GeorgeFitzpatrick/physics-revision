@@ -1,6 +1,7 @@
 package com.georgefitzpatrick.revision.physics.data;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
@@ -8,35 +9,46 @@ import javax.persistence.MappedSuperclass;
 public abstract class AbstractEntity {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Integer getId() {
+    public AbstractEntity() {
+
+    }
+
+    public AbstractEntity(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isPersisted() {
+        return id != null;
     }
 
     @Override
     public int hashCode() {
-        if (id != null) {
+        if (id != null)
             return id.hashCode();
-        }
+
         return super.hashCode();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof AbstractEntity)) {
-            return false; // null or other class
-        }
-        AbstractEntity other = (AbstractEntity) obj;
+        if (!(obj instanceof AbstractEntity other))
+            return false;
 
-        if (id != null) {
+        if (id != null)
             return id.equals(other.id);
-        }
+
         return super.equals(other);
     }
+
 }
