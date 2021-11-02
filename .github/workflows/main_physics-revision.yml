@@ -9,14 +9,7 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  JAVA_VERSION: '11'
-  AZURE_WEBAPP_NAME: 'physics-revision'
-  AZURE_WEBAPP_PACKAGE_PATH: ${{ github.workspace }}
-  AZURE_WEBAPP_PUBLISH_PROFILE: secrets.AZUREAPPSERVICE_PUBLISHPROFILE_90D6E72968134D7EB42C7843300158AC
-
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
@@ -24,12 +17,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Java version
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
-          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'openjdk'
+          java-version: '11'
 
       - name: Build with Maven
-        run: mvn clean install -P production
+        run: mvn clean package -DskipTests -Pproduction
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -54,7 +48,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          app-name: 'physics-revision'
           slot-name: 'Production'
-          publish-profile: ${{ env.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_90D6E72968134D7EB42C7843300158AC }}
           package: '*.jar'
