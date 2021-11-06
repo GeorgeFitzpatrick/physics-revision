@@ -263,8 +263,8 @@ VALUES (1, 'Uncertainties', 560),
        (27, 'Doppler imaging', 538);
 
 INSERT INTO lessons (sub_chapter_id, file_path)
-VALUES (1, 'lesson/chapter_1/lesson_3_uncertainty.pdf'),
-       (1, 'lesson/chapter_1/lesson_4_uncertainty_two.pdf'),
+VALUES (1, 'lesson/chapter_1/lesson_1_uncertainty.pdf'),
+       (1, 'lesson/chapter_1/lesson_2_uncertainty_two.pdf'),
 
        (2, 'lesson/chapter_2/lesson_1_quantities_and_units.pdf'),
        (3, 'lesson/chapter_2/lesson_2_derived_units.pdf'),
