@@ -91,7 +91,9 @@ VALUES (1, 1, 'Practical Skills'),
 
 INSERT INTO flashcards (chapter_id, title, url)
 VALUES (1, 'Physics 1.1 - Practical Skills',
-        'https://www.chegg.com/flashcards/physics-1-1-practical-skills-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck');
+        'https://www.chegg.com/flashcards/physics-1-1-practical-skills-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
+       (2, 'Physics 2.1 - Foundations of physics',
+        'https://www.chegg.com/flashcards/physics-2-1-foundations-of-physics-0ffc1508-cf91-4cc3-a0e0-68f3078b7956/edit');
 
 INSERT INTO sub_chapters (chapter_id, title, page_number)
 VALUES (1, 'Uncertainties', 560),
