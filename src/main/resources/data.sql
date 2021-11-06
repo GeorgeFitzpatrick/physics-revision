@@ -19,6 +19,14 @@ CREATE TABLE IF NOT EXISTS chapters
     title     VARCHAR                         NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS flashcards
+(
+    id         LONG AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    chapter_id LONG                            NOT NULL,
+    title      VARCHAR                         NOT NULL,
+    url        VARCHAR                         NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS sub_chapters
 (
     id          LONG AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -80,6 +88,10 @@ VALUES (1, 1, 'Practical Skills'),
        (25, 6, 'Radioactivity'),
        (26, 6, 'Nuclear physics'),
        (27, 6, 'Medical imaging');
+
+INSERT INTO flashcards (chapter_id, title, url)
+VALUES (1, 'Physics 1.1 - Practical Skills',
+        'https://www.chegg.com/flashcards/physics-1-1-practical-skills-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck');
 
 INSERT INTO sub_chapters (chapter_id, title, page_number)
 VALUES (1, 'Uncertainties', 560),

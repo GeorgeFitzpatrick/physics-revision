@@ -18,16 +18,21 @@ public class Chapter extends AbstractEntity {
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "chapter_id")
+    private Set<Flashcards> flashcards;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "chapter_id")
     private Set<SubChapter> subChapters;
 
     public Chapter() {
 
     }
 
-    public Chapter(Long id, Module module, String title, Set<SubChapter> subChapters) {
+    public Chapter(Long id, Module module, String title, Set<Flashcards> flashcards, Set<SubChapter> subChapters) {
         super(id);
         this.module = module;
         this.title = title;
+        this.flashcards = flashcards;
         this.subChapters = subChapters;
     }
 
@@ -45,6 +50,14 @@ public class Chapter extends AbstractEntity {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Set<Flashcards> getFlashcards() {
+        return flashcards;
+    }
+
+    public void setFlashcards(Set<Flashcards> flashcards) {
+        this.flashcards = flashcards;
     }
 
     public Set<SubChapter> getSubChapters() {

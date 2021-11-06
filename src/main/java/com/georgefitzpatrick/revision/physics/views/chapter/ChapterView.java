@@ -19,8 +19,6 @@ import com.vaadin.flow.theme.Theme;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Set;
-
 @Theme(themeFolder = "physicsrevision")
 @Route("chapters/:chapter")
 @Tag("chapter-view")
@@ -74,7 +72,7 @@ public class ChapterView extends LitTemplate implements HasComponents, HasDynami
         title.setText(chapter.getTitle());
         subtitle.setText("Physics revision");
 
-        updateTabs(chapter.getSubChapters());
+        updateTabs(chapter);
     }
 
     @Override
@@ -93,14 +91,20 @@ public class ChapterView extends LitTemplate implements HasComponents, HasDynami
         layout.getElement().removeChild(content.getElement());
     }
 
-    public void updateTabs(@NotNull Set<SubChapter> subChapters) {
+    private RouterLink subChapterLink(SubChapter subChapter) {
+        var chapter = subChapter.getChapter();
+        var chapterParam = new RouteParam("chapter", chapter.getId().toString());
+        var subChapterParam = new RouteParam("sub-chapter", subChapter.getId().toString());
+        var params = new RouteParameters(chapterParam, subChapterParam);
+        return new RouterLink(subChapter.getTitle(), SubChapterView.class, params);
+    }
+
+    private void updateTabs(Chapter chapter) {
         tabs.removeAll();
-        subChapters.forEach(subChapter -> {
-            var chapterParam = new RouteParam("chapter", chapter.getId().toString());
-            var subChapterParam = new RouteParam("sub-chapter", subChapter.getId().toString());
-            var params = new RouteParameters(chapterParam, subChapterParam);
-            var link = new RouterLink(subChapter.getTitle(), SubChapterView.class, params);
-            tabs.add(link);
+
+        chapter.getSubChapters().forEach(subChapter -> {
+            var subChapterLink = subChapterLink(subChapter);
+            tabs.add(subChapterLink);
         });
     }
 

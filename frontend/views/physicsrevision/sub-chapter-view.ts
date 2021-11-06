@@ -38,8 +38,12 @@ export class SubChapterView extends LitElement {
                     </table>
                 </div>
 
+                <h2 style="margin-bottom: 0;">Flashcards</h2>
+                <ul style="width: 100%;" class="list-none m-0 p-0" id="flashcards-list"></ul>
+
                 <h2 style="margin-bottom: 0;">Lessons</h2>
-                <ul style="width: 100%;" class="list-none m-0 p-0" id="lessons"></ul>
+                <ul style="width: 100%;" class="list-none m-0 p-0" id="lessons-list"></ul>
+
                 <h2 style="margin-bottom: 0;">Practice Questions</h2>
             </vaadin-vertical-layout>
         `;

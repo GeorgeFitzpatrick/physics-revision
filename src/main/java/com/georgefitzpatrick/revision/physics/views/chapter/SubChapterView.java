@@ -1,6 +1,7 @@
 package com.georgefitzpatrick.revision.physics.views.chapter;
 
 import com.georgefitzpatrick.revision.physics.data.AbstractEntity;
+import com.georgefitzpatrick.revision.physics.data.entity.Flashcards;
 import com.georgefitzpatrick.revision.physics.data.entity.Lesson;
 import com.georgefitzpatrick.revision.physics.data.entity.SubChapter;
 import com.georgefitzpatrick.revision.physics.data.service.ChapterService;
@@ -38,8 +39,11 @@ public class SubChapterView extends LitTemplate implements HasComponents, HasDyn
     @Id("page-number")
     private Anchor pageNumber;
 
-    @Id("lessons")
-    private UnorderedList lessons;
+    @Id("flashcards-list")
+    private UnorderedList flashcardsList;
+
+    @Id("lessons-list")
+    private UnorderedList lessonsList;
 
     private SubChapter subChapter;
 
@@ -69,6 +73,7 @@ public class SubChapterView extends LitTemplate implements HasComponents, HasDyn
         subChapterTitle.setText(subChapter.getTitle());
 
         updatePageNumber(subChapter.getPageNumber());
+        updateFlashcards(chapter.getFlashcards());
         updateLessons(subChapter.getLessons());
     }
 
@@ -79,20 +84,36 @@ public class SubChapterView extends LitTemplate implements HasComponents, HasDyn
         pageNumber.setHref(url);
     }
 
+    private void updateFlashcards(Set<Flashcards> flashcards) {
+        flashcardsList.removeAll();
+
+        if (flashcards.isEmpty()) {
+            Paragraph paragraph = new Paragraph();
+            paragraph.setText("Nothing to see here.");
+            flashcardsList.add(paragraph);
+            return;
+        }
+
+        flashcards.forEach(flashcard -> {
+            var card = new FlashcardsCard(flashcard);
+            flashcardsList.add(card);
+        });
+    }
+
     private void updateLessons(@NotNull Set<Lesson> lessons) {
-        this.lessons.removeAll();
+        lessonsList.removeAll();
 
         if (lessons.isEmpty()) {
             Paragraph paragraph = new Paragraph();
             paragraph.setText("Nothing to see here.");
-            this.lessons.add(paragraph);
+            lessonsList.add(paragraph);
             return;
         }
 
         var sorted = lessons.stream().sorted(Comparator.comparingLong(AbstractEntity::getId));
         sorted.forEach(lesson -> {
             var card = new LessonCard(lesson);
-            this.lessons.add(card);
+            lessonsList.add(card);
         });
     }
 
