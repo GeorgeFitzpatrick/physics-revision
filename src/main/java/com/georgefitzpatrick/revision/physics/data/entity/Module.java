@@ -9,6 +9,10 @@ import java.util.Set;
 @Table(name = "modules")
 public class Module extends AbstractEntity {
 
+    @ManyToOne
+    @JoinColumn(name = "year_id")
+    private Year year;
+
     @Column(name = "title")
     private String title;
 
@@ -23,11 +27,20 @@ public class Module extends AbstractEntity {
 
     }
 
-    public Module(Long id, String title, String image, Set<Chapter> chapters) {
+    public Module(Long id, Year year, String title, String image, Set<Chapter> chapters) {
         super(id);
+        this.year = year;
         this.title = title;
         this.image = image;
         this.chapters = chapters;
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public void setYear(Year year) {
+        this.year = year;
     }
 
     public String getTitle() {

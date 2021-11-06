@@ -1,8 +1,15 @@
-CREATE TABLE IF NOT EXISTS modules
+CREATE TABLE IF NOT EXISTS years
 (
     id    LONG AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    title VARCHAR                         NOT NULL,
-    image VARCHAR                         NOT NULL
+    title VARCHAR                         NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS modules
+(
+    id      LONG AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    year_id LONG                            NOT NULL,
+    title   VARCHAR                         NOT NULL,
+    image   VARCHAR                         NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS chapters
@@ -27,13 +34,18 @@ CREATE TABLE IF NOT EXISTS lessons
     file_path      VARCHAR                         NOT NULL
 );
 
-INSERT INTO modules (id, title, image)
-VALUES (1, 'Practical Skills', 'image/light_bulb.png'),
-       (2, 'Foundations of physics', 'image/bridge.png'),
-       (3, 'Forces and motion', 'image/cogs.png'),
-       (4, 'Electrons, waves, and photons', 'image/solar_panels.png'),
-       (5, 'Newtonian world and astrophysics', 'image/galaxy.png'),
-       (6, 'Particles and medical physics', 'image/atomic_model.png');
+INSERT INTO years (id, title)
+VALUES (1, 'Year 1'),
+       (2, 'Year 2');
+
+
+INSERT INTO modules (id, year_id, title, image)
+VALUES (1, 1, 'Practical Skills', 'image/light_bulb.png'),
+       (2, 1, 'Foundations of physics', 'image/bridge.png'),
+       (3, 1, 'Forces and motion', 'image/cogs.png'),
+       (4, 1, 'Electrons, waves, and photons', 'image/solar_panels.png'),
+       (5, 2, 'Newtonian world & astrophysics', 'image/galaxy.png'),
+       (6, 2, 'Particles and medical physics', 'image/atomic_model.png');
 
 INSERT INTO chapters (id, module_id, title)
 VALUES (1, 1, 'Practical Skills'),
@@ -258,6 +270,39 @@ VALUES (1, 'lesson/chapter_1/lesson_3_uncertainty.pdf'),
        (3, 'lesson/chapter_2/lesson_2_derived_units.pdf'),
        (6, 'lesson/chapter_2/lesson_5_resolving_vectors_practical.pdf'),
        (4, 'lesson/chapter_2/lesson_6_scalars_and_vectors.pdf'),
+
+       (8, 'lesson/chapter_3/lesson_1_speed_and_velocity.pdf'),
+       (10, 'lesson/chapter_3/lesson_2_acceleration_and_velocity_time_graphs.pdf'),
+       (12, 'lesson/chapter_3/lesson_3_equations_of_motion.pdf'),
+       (13, 'lesson/chapter_3/lesson_4_breaking_and_stopping.pdf'),
+       (14, 'lesson/chapter_3/lesson_5_free_fall_and_g.pdf'),
+       (14, 'lesson/chapter_3/lesson_6_determining_g.pdf'),
+       (15, 'lesson/chapter_3/lesson_7_projectile_motion.pdf'),
+       (15, 'lesson/chapter_3/lesson_8_projectile_motion_2.pdf'),
+
+       (16, 'lesson/chapter_4/lesson_1_force_and_mass.pdf'),
+       (17, 'lesson/chapter_4/lesson_2_centre_of_mass.pdf'),
+       (19, 'lesson/chapter_4/lesson_3_drag_and_terminal_velocity.pdf'),
+       (19, 'lesson/chapter_4/lesson_4_drag_investigation.pdf'),
+       (20, 'lesson/chapter_4/lesson_5_moments_and_equilibrium.pdf'),
+       (21, 'lesson/chapter_4/lesson_6_couples_and_torques.pdf'),
+       (23, 'lesson/chapter_4/lesson_8_density.pdf'),
+       (23, 'lesson/chapter_4/lesson_9_pressure.pdf'),
+
+       (25, 'lesson/chapter_5/lesson_1_work_and_conservation_of_energy.pdf'),
+       (27, 'lesson/chapter_5/lesson_2_ke_and_gpe.pdf'),
+       (28, 'lesson/chapter_5/lesson_3_power_and_efficiency.pdf'),
+       (28, 'lesson/chapter_5/lesson_4_slope_efficiency.pdf'),
+
+       (30, 'lesson/chapter_6/lesson_3_elastic_potential_energy.pdf'),
+       (31, 'lesson/chapter_6/lesson_2_deformation.pdf'),
+       (32, 'lesson/chapter_6/lesson_4_stress_strain_and_youngs_modulus.pdf'),
+
+       (33, 'lesson/chapter_7/lesson_1_newtons_first_and_thrid_laws_of_motion.pdf'),
+       (34, 'lesson/chapter_7/lesson_2_linear_momentum.pdf'),
+       (35, 'lesson/chapter_7/lesson_4_newtons_second_law.pdf'),
+       (36, 'lesson/chapter_7/lesson_5_impulse.pdf'),
+       (37, 'lesson/chapter_7/lesson_3_collisions_in_two_dimensions.pdf'),
 
        (38, 'lesson/chapter_8/lesson_1_current.pdf'),
        (39, 'lesson/chapter_8/lesson_2_moving_charges.pdf'),

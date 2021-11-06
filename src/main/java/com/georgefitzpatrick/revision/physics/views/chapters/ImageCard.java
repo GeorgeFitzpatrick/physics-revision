@@ -32,15 +32,23 @@ public class ImageCard extends LitTemplate {
     @Id("subtitle")
     private Span subtitle;
 
-    @Id("badge")
-    private Span badge;
+    @Id("year-badge")
+    private Span yearBadge;
+
+    @Id("module-badge")
+    private Span moduleBadge;
 
     public ImageCard(@NotNull Chapter chapter) {
-        this.image.setSrc(chapter.getModule().getImage());
-        this.image.setAlt(chapter.getTitle());
-        this.header.setText(chapter.getTitle());
-        this.subtitle.setText("Chapter " + chapter.getId());
-        this.badge.setText(chapter.getModule().getTitle());
+        header.setText(chapter.getTitle());
+        subtitle.setText("Chapter " + chapter.getId());
+
+        var module = chapter.getModule();
+        image.setSrc(module.getImage());
+        image.setAlt(module.getTitle());
+        moduleBadge.setText(module.getTitle());
+
+        var year = module.getYear();
+        yearBadge.setText(year.getTitle());
 
         this.root.addClickListener((ComponentEventListener<ClickEvent<ListItem>>) listItemClickEvent -> {
             RouteParam param = new RouteParam("chapter", chapter.getId().toString());

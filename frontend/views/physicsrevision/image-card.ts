@@ -20,7 +20,10 @@ export class ImageCard extends LitElement {
                 <span class="text-xl font-semibold" id="header"></span>
                 <span class="text-s text-secondary" id="subtitle"></span>
                 <p class="my-m" id="text"></p>
-                <span theme="badge" id="badge"></span>
+                <vaadin-horizontal-layout>
+                    <span theme="badge success" id="year-badge"></span>
+                    <span style="margin-left: var(--lumo-space-xs);" theme="badge" id="module-badge"></span>
+                </vaadin-horizontal-layout>
             </li> `;
     }
 
