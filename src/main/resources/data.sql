@@ -95,7 +95,11 @@ VALUES (1, 'Physics 1.1 - Practical Skills',
        (2, 'Physics 2.1 - Foundations of physics',
         'https://www.chegg.com/flashcards/physics-2-1-foundations-of-physics-0ffc1508-cf91-4cc3-a0e0-68f3078b7956/edit'),
        (3, 'Physics 3.1 - Motion',
-        'https://www.chegg.com/flashcards/physics-3-1-motion-79147add-0112-4973-a8cb-1bd0dc3334af/deck');
+        'https://www.chegg.com/flashcards/physics-3-1-motion-79147add-0112-4973-a8cb-1bd0dc3334af/deck'),
+       (11, 'Physics 4.4, 4.5 - Waves',
+        'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
+       (12, 'Physics 4.4, 4.5 - Waves',
+        'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck');
 
 INSERT INTO sub_chapters (chapter_id, title, page_number)
 VALUES (1, 'Uncertainties', 560),
