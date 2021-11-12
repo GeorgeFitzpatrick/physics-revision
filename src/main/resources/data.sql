@@ -93,7 +93,7 @@ INSERT INTO flashcards (chapter_id, title, url)
 VALUES (1, 'Physics 1.1 - Practical Skills',
         'https://www.chegg.com/flashcards/physics-1-1-practical-skills-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
        (2, 'Physics 2.1 - Foundations of physics',
-        'https://www.chegg.com/flashcards/physics-2-1-foundations-of-physics-0ffc1508-cf91-4cc3-a0e0-68f3078b7956/edit'),
+        'https://www.chegg.com/flashcards/physics-2-1-foundations-of-physics-0ffc1508-cf91-4cc3-a0e0-68f3078b7956/deck'),
        (3, 'Physics 3.1 - Motion',
         'https://www.chegg.com/flashcards/physics-3-1-motion-79147add-0112-4973-a8cb-1bd0dc3334af/deck'),
        (11, 'Physics 4.4, 4.5 - Waves',
