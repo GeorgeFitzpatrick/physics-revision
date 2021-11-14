@@ -99,7 +99,11 @@ VALUES (1, 'Physics 1.1 - Practical Skills',
        (11, 'Physics 4.4, 4.5 - Waves',
         'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
        (12, 'Physics 4.4, 4.5 - Waves',
-        'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck');
+        'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
+       (14, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
+        'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
+       (15, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
+        'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck');
 
 INSERT INTO sub_chapters (chapter_id, title, page_number)
 VALUES (1, 'Uncertainties', 560),
