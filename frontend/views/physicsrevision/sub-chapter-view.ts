@@ -27,7 +27,7 @@ export class SubChapterView extends LitElement {
                         <tr>
                             <td>
                                 <p><strong>Kerboodle</strong></p>
-                                <p>A Level Physics for OCR A Student Book (Year 1 & 2) by OUP Oxford.</p>
+                                <p>A Level Physics for OCR A Student Book (Year 1 & 2) by OUP Oxford</p>
                                 <a target="_blank" id="page-number"></a>
                             </td>
                             <td style="padding-left: 24px;">
