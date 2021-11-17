@@ -35,6 +35,14 @@ CREATE TABLE IF NOT EXISTS sub_chapters
     page_number INTEGER                         NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS videos
+(
+    id             LONG AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    sub_chapter_id LONG                            NOT NULL,
+    title          VARCHAR                         NOT NULL,
+    url            VARCHAR                         NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS lessons
 (
     id             LONG AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -103,7 +111,9 @@ VALUES (1, 'Physics 1.1 - Practical Skills',
        (14, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
         'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
        (15, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
-        'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck');
+        'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
+       (15, 'Physics 6.4 - Particle Physics',
+        'https://www.chegg.com/flashcards/physics-6-4-particle-physics-91d5315f-3eb0-4455-915e-128d4685b640/desk');
 
 INSERT INTO sub_chapters (chapter_id, title, page_number)
 VALUES (1, 'Uncertainties', 560),
@@ -286,6 +296,9 @@ VALUES (1, 'Uncertainties', 560),
        (27, 'Acoustic impedance', 536),
        (27, 'Doppler imaging', 538);
 
+INSERT INTO videos (sub_chapter_id, title, url)
+VALUES (1, 'Method of mixtures (A level physics)', 'https://www.youtube.com/watch?v=0YIIYQhfWrQ');
+
 INSERT INTO lessons (sub_chapter_id, file_path)
 VALUES (1, 'lesson/chapter_1/lesson_1_uncertainty.pdf'),
        (1, 'lesson/chapter_1/lesson_2_uncertainty_two.pdf'),
@@ -419,4 +432,8 @@ VALUES (1, 'lesson/chapter_1/lesson_1_uncertainty.pdf'),
        (127, 'lesson/chapter_23/lesson_2_charged_particles_in_a_magnetic_field.pdf'),
        (128, 'lesson/chapter_23/lesson_3_electromagnetic_induction.pdf'),
        (129, 'lesson/chapter_23/lesson_4_faradays_law_and_lenzs_law.pdf'),
-       (130, 'lesson/chapter_23/lesson_5_transformers.pdf');
+       (130, 'lesson/chapter_23/lesson_5_transformers.pdf'),
+
+       (131, 'lesson/chapter_24/lesson_1_alpha_particle_scattering_experiment.pdf'),
+       (132, 'lesson/chapter_24/lesson_2_the_nucleus.pdf'),
+       (133, 'lesson/chapter_24/lesson_3_fundamental_particles.pdf');
