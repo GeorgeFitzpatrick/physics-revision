@@ -112,7 +112,11 @@ VALUES (1, 'Physics 1.1 - Practical Skills',
         'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
        (15, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
         'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
-       (24, 'Physics 6.4 - Particle Physics',
+       (24, 'Physics 6.4 - Nuclear & Particle Physics',
+        'https://www.chegg.com/flashcards/physics-6-4-particle-physics-91d5315f-3eb0-4455-915e-128d4685b640/deck'),
+       (25, 'Physics 6.4 - Nuclear & Particle Physics',
+        'https://www.chegg.com/flashcards/physics-6-4-particle-physics-91d5315f-3eb0-4455-915e-128d4685b640/deck'),
+       (26, 'Physics 6.4 - Nuclear & Particle Physics',
         'https://www.chegg.com/flashcards/physics-6-4-particle-physics-91d5315f-3eb0-4455-915e-128d4685b640/deck');
 
 INSERT INTO sub_chapters (chapter_id, title, page_number)
