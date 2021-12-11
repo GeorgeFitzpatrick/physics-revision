@@ -91,7 +91,7 @@ VALUES (1, 1, 'Practical Skills'),
 
        (21, 6, 'Capacitance'),
        (22, 6, 'Electric fields'),
-       (23, 6, 'Magnetic fields'),
+       (23, 6, 'Electromagnetism'),
        (24, 6, 'Particle physics'),
        (25, 6, 'Radioactivity'),
        (26, 6, 'Nuclear physics'),
