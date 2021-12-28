@@ -98,12 +98,17 @@ VALUES (1, 1, 'Practical Skills'),
        (27, 6, 'Medical imaging');
 
 INSERT INTO flashcards (chapter_id, title, url)
-VALUES (1, 'Physics 1.1 - Practical Skills',
-        'https://www.chegg.com/flashcards/physics-1-1-practical-skills-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
-       (2, 'Physics 2.1 - Foundations of physics',
-        'https://www.chegg.com/flashcards/physics-2-1-foundations-of-physics-0ffc1508-cf91-4cc3-a0e0-68f3078b7956/deck'),
+VALUES (1, 'Physics 1 & 2 - Practical Skills & Foundations',
+        'https://www.chegg.com/flashcards/physics-1-2-practical-skills-foundations-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
+       (2, 'Physics 1 & 2 - Practical Skills & Foundations',
+        'https://www.chegg.com/flashcards/physics-1-2-practical-skills-foundations-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
        (3, 'Physics 3.1 - Motion',
         'https://www.chegg.com/flashcards/physics-3-1-motion-79147add-0112-4973-a8cb-1bd0dc3334af/deck'),
+       (4, 'Physics 3.2 - Forces in action',
+        'https://www.chegg.com/flashcards/physics-3-2-forces-in-action-889e2696-393c-4b89-93a2-44473042da73/deck'),
+       (4, 'Physics 3.3 - Work, Energy & Power',
+        'https://www.chegg.com/flashcards/physics-3-3-work-energy-power-29ab3cc2-93fc-4cb1-aa02-cdf230063f8c/deck'),
+
        (11, 'Physics 4.4, 4.5 - Waves',
         'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
        (12, 'Physics 4.4, 4.5 - Waves',
