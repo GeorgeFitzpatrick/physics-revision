@@ -14,40 +14,40 @@ const createLinkReferences = (css, target) => {
   // [2] matches the url
   const importMatcher = /(?:@media\s(.+?))?(?:\s{)?\@import\surl\((.+?)\);(?:})?/g;
 
-  var match;
+    var match;
   var styleCss = css;
 
-  // For each external url import add a link reference
-  while ((match = importMatcher.exec(css)) !== null) {
-    styleCss = styleCss.replace(match[0], "");
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = match[2];
-    if (match[1]) {
-      link.media = match[1];
+    // For each external url import add a link reference
+    while ((match = importMatcher.exec(css)) !== null) {
+        styleCss = styleCss.replace(match[0], "");
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = match[2];
+        if (match[1]) {
+            link.media = match[1];
+        }
+        // For target document append to head else append to target
+        if (target === document) {
+            document.head.appendChild(link);
+        } else {
+            target.appendChild(link);
+        }
     }
-    // For target document append to head else append to target
-    if (target === document) {
-      document.head.appendChild(link);
-    } else {
-      target.appendChild(link);
-    }
-  }
-  ;
-  return styleCss;
+    ;
+    return styleCss;
 };
 
 // target: Document | ShadowRoot
 export const injectGlobalCss = (css, target, first) => {
-  if (target === document) {
-    const hash = getHash(css);
-    if (window.Vaadin.theme.injectedGlobalCss.indexOf(hash) !== -1) {
-      return;
+    if (target === document) {
+        const hash = getHash(css);
+        if (window.Vaadin.theme.injectedGlobalCss.indexOf(hash) !== -1) {
+            return;
+        }
+        window.Vaadin.theme.injectedGlobalCss.push(hash);
     }
-    window.Vaadin.theme.injectedGlobalCss.push(hash);
-  }
   const sheet = new CSSStyleSheet();
-  sheet.replaceSync(createLinkReferences(css, target));
+    sheet.replaceSync(createLinkReferences(css, target));
   if (first) {
     target.adoptedStyleSheets = [sheet, ...target.adoptedStyleSheets];
   } else {
@@ -69,13 +69,13 @@ const addStyleInclude = (module, target) => {
 };
 
 const getStyleModule = (id) => {
-  const template = DomModule.import(id, "template");
-  const cssText =
-      template &&
-      stylesFromTemplate(template, "")
-          .map((style) => style.textContent)
-          .join(" ");
-  return cssText;
+    const template = DomModule.import(id, "template");
+    const cssText =
+        template &&
+        stylesFromTemplate(template, "")
+            .map((style) => style.textContent)
+            .join(" ");
+    return cssText;
 };
 
 window.Vaadin = window.Vaadin || {};
@@ -111,32 +111,32 @@ function hashFnv32a(str) {
  * @returns {string} 64 bit (as 16 byte hex string)
  */
 function getHash(input) {
-  let h1 = hashFnv32a(input); // returns 32 bit (as 8 byte hex string)
-  return h1 + hashFnv32a(h1 + input);
+    let h1 = hashFnv32a(input); // returns 32 bit (as 8 byte hex string)
+    return h1 + hashFnv32a(h1 + input);
 }
 export const applyTheme = (target) => {
 
-  injectGlobalCss(stylesCss.toString(), target);
+    injectGlobalCss(stylesCss.toString(), target);
 
 
-  if (!document['_vaadintheme_physicsrevision_componentCss']) {
+    if (!document['_vaadintheme_physicsrevision_componentCss']) {
 
-    document['_vaadintheme_physicsrevision_componentCss'] = true;
-  }
-  // Lumo styles are injected into shadow roots.
+        document['_vaadintheme_physicsrevision_componentCss'] = true;
+    }
+    // Lumo styles are injected into shadow roots.
 // For the document, we need to be compatible with flow-generated-imports and add missing <style> tags.
-  const shadowRoot = (target instanceof ShadowRoot);
-  if (shadowRoot) {
-    injectGlobalCss(getStyleModule("lumo-typography"), target, true);
-    injectGlobalCss(getStyleModule("lumo-color"), target, true);
-    injectGlobalCss(getStyleModule("lumo-spacing"), target, true);
-    injectGlobalCss(getStyleModule("lumo-badge"), target, true);
-  } else if (!document['_vaadinthemelumoimports_']) {
-    addStyleInclude("lumo-typography", target);
-    addStyleInclude("lumo-color", target);
-    addStyleInclude("lumo-spacing", target);
-    addStyleInclude("lumo-badge", target);
-    document['_vaadinthemelumoimports_'] = true;
-  }
+    const shadowRoot = (target instanceof ShadowRoot);
+    if (shadowRoot) {
+        injectGlobalCss(getStyleModule("lumo-typography"), target, true);
+        injectGlobalCss(getStyleModule("lumo-color"), target, true);
+        injectGlobalCss(getStyleModule("lumo-spacing"), target, true);
+        injectGlobalCss(getStyleModule("lumo-badge"), target, true);
+    } else if (!document['_vaadinthemelumoimports_']) {
+        addStyleInclude("lumo-typography", target);
+        addStyleInclude("lumo-color", target);
+        addStyleInclude("lumo-spacing", target);
+        addStyleInclude("lumo-badge", target);
+        document['_vaadinthemelumoimports_'] = true;
+    }
 
 }
