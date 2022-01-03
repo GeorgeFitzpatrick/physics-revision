@@ -108,6 +108,11 @@ VALUES (1, 'Physics 1 & 2 - Practical Skills & Foundations',
         'https://www.chegg.com/flashcards/physics-3-2-forces-in-action-889e2696-393c-4b89-93a2-44473042da73/deck'),
        (4, 'Physics 3.3 - Work, Energy & Power',
         'https://www.chegg.com/flashcards/physics-3-3-work-energy-power-29ab3cc2-93fc-4cb1-aa02-cdf230063f8c/deck'),
+       (5, 'Physics 3.4 - Materials',
+        'https://www.chegg.com/flashcards/physics-3-4-materials-96b38ce2-043c-4a84-816f-296e4652dd71/deck'),
+       (6, 'Physics 3.5 - Momentum',
+        'https://www.chegg.com/flashcards/physics-3-5-momentum-11cd22e7-a709-49d5-98e9-9261ed83dd2c/deck'),
+
 
        (11, 'Physics 4.4, 4.5 - Waves',
         'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
