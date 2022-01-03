@@ -16,7 +16,7 @@ import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@PWA(name = "Physics Revision", shortName = "Revision", enableInstallPrompt = false)
+@PWA(name = "Physics Revision", shortName = "Revision")
 @Theme(themeFolder = "physicsrevision")
 @PageTitle("Chapters | Physics Revision")
 @Route("chapters")
