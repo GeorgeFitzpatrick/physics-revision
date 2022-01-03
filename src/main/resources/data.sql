@@ -102,6 +102,8 @@ VALUES (1, 'Physics 1 & 2 - Practical Skills & Foundations',
         'https://www.chegg.com/flashcards/physics-1-2-practical-skills-foundations-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
        (2, 'Physics 1 & 2 - Practical Skills & Foundations',
         'https://www.chegg.com/flashcards/physics-1-2-practical-skills-foundations-3d24a6c7-d808-4f88-bc69-7ee22f3cf19f/deck'),
+
+       // module 3
        (3, 'Physics 3.1 - Motion',
         'https://www.chegg.com/flashcards/physics-3-1-motion-79147add-0112-4973-a8cb-1bd0dc3334af/deck'),
        (4, 'Physics 3.2 - Forces in action',
@@ -113,15 +115,21 @@ VALUES (1, 'Physics 1 & 2 - Practical Skills & Foundations',
        (6, 'Physics 3.5 - Momentum',
         'https://www.chegg.com/flashcards/physics-3-5-momentum-11cd22e7-a709-49d5-98e9-9261ed83dd2c/deck'),
 
-
+       // module 4
        (11, 'Physics 4.4, 4.5 - Waves',
         'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
        (12, 'Physics 4.4, 4.5 - Waves',
         'https://www.chegg.com/flashcards/physics-4-4-4-5-waves-0d621ba9-8701-498d-a3a5-5bef56cd9043/deck'),
+
+       // module 5
        (14, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
         'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
        (15, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
         'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
+
+       // module 6
+       (22, 'Physics 6.2 - Electric Fields',
+        'https://www.chegg.com/flashcards/physics-6-2-electric-fields-2b20c470-55a8-4c99-9fc4-b8142e9a341a/deck'),
        (24, 'Physics 6.4 - Nuclear & Particle Physics',
         'https://www.chegg.com/flashcards/physics-6-4-particle-physics-91d5315f-3eb0-4455-915e-128d4685b640/deck'),
        (25, 'Physics 6.4 - Nuclear & Particle Physics',
