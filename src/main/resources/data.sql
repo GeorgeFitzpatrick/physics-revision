@@ -124,6 +124,8 @@ VALUES (1, 'Physics 1 & 2 - Practical Skills & Foundations',
        (15, 'Physics 5.1 - Thermal Physics & Ideal Gasses',
         'https://www.chegg.com/flashcards/physics-5-1-thermal-physics-ideal-gasses-3be1445d-a5a6-4175-8754-193ecf1b3036/deck'),
 
+       (21, 'Physics 6.1 - Capacitors',
+        'https://www.chegg.com/flashcards/physics-6-1-capacitors-1c51e34b-9673-4e0c-961e-8e911373c9d8/deck'),
        (22, 'Physics 6.2 - Electric Fields',
         'https://www.chegg.com/flashcards/physics-6-2-electric-fields-2b20c470-55a8-4c99-9fc4-b8142e9a341a/deck'),
        (24, 'Physics 6.4 - Nuclear & Particle Physics',
