@@ -8,14 +8,14 @@ import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@vaadin/vaadin-lumo-styles/badge.js';
 
 const createLinkReferences = (css, target) => {
-  // Unresolved urls are written as '@import url(text);' to the css
-  // [0] is the full match
-  // [1] matches the media query
-  // [2] matches the url
-  const importMatcher = /(?:@media\s(.+?))?(?:\s{)?\@import\surl\((.+?)\);(?:})?/g;
+    // Unresolved urls are written as '@import url(text);' to the css
+    // [0] is the full match
+    // [1] matches the media query
+    // [2] matches the url
+    const importMatcher = /(?:@media\s(.+?))?(?:\s{)?\@import\surl\((.+?)\);(?:})?/g;
 
     var match;
-  var styleCss = css;
+    var styleCss = css;
 
     // For each external url import add a link reference
     while ((match = importMatcher.exec(css)) !== null) {
@@ -46,13 +46,13 @@ export const injectGlobalCss = (css, target, first) => {
         }
         window.Vaadin.theme.injectedGlobalCss.push(hash);
     }
-  const sheet = new CSSStyleSheet();
+    const sheet = new CSSStyleSheet();
     sheet.replaceSync(createLinkReferences(css, target));
-  if (first) {
-    target.adoptedStyleSheets = [sheet, ...target.adoptedStyleSheets];
-  } else {
-    target.adoptedStyleSheets = [...target.adoptedStyleSheets, sheet];
-  }
+    if (first) {
+        target.adoptedStyleSheets = [sheet, ...target.adoptedStyleSheets];
+    } else {
+        target.adoptedStyleSheets = [...target.adoptedStyleSheets, sheet];
+    }
 };
 
 const addCssBlock = function (block, before = false) {
